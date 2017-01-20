@@ -20,7 +20,7 @@ class Token
     const TYPE_RBRACE = '}';
     const TYPE_LPAREN = '(';
     const TYPE_RPAREN = ')';
-    const TYPE_COLON = ' = ';
+    const TYPE_COLON = ':';
     const TYPE_COMMA = ',';
     const TYPE_AMP = '&';
 

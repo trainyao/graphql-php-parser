@@ -75,12 +75,12 @@ class Parser extends Tokenizer
     public function parseField()
     {
         $name = $this->parseIdentifier();
-        $params = $this->match(Token::TYPE_LPAREN) ? $this->parseArgumentList() : [];
         $alias = null;
         if ($this->eat(Token::TYPE_COLON)) {
             $alias = $name;
             $name = $this->parseIdentifier();
         }
+        $params = $this->match(Token::TYPE_LPAREN) ? $this->parseArgumentList() : [];
         $fields = $this->match(Token::TYPE_LBRACE) ? $this->parseFieldList() : [];
 
         return new Field($name, $alias, $params, $fields);
